@@ -29,7 +29,9 @@ app.post('/register', checkIfTheUserHasCredentials, checkIfTheUserIsAdmin, requi
 
 app.get('/items',  require('./controllers/items/get'));
 
-app.post('/newitem', checkIfTheUserHasCredentials, checkIfTheUserIsAdmin, require('./controllers/items/add'));
+app.post('/new-item', checkIfTheUserHasCredentials, checkIfTheUserIsAdmin, require('./controllers/items/add'));
+
+app.post('/modify-item', checkIfTheUserHasCredentials, checkIfTheUserIsAdmin, require('./controllers/items/modify'));
 
 
 mongoose.connect(dataBaseConnectionString, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true },

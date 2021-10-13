@@ -33,6 +33,8 @@ app.post('/new-item', checkIfTheUserHasCredentials, checkIfTheUserIsAdmin, requi
 
 app.post('/modify-item', checkIfTheUserHasCredentials, checkIfTheUserIsAdmin, require('./controllers/items/modify'));
 
+app.delete('/delete-item/:id', checkIfTheUserHasCredentials, checkIfTheUserIsAdmin, require('./controllers/items/delete'));
+
 
 mongoose.connect(dataBaseConnectionString, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true },
     (error) => {

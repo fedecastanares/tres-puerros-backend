@@ -1,12 +1,12 @@
-const itemModel = require('../../models/item')
+const boxesModel = require('../../models/box')
 
 module.exports = async (request, response) => {
     try { 
         
-        const items = await itemModel.find({}, '-__v');
+        const boxes = await boxesModel.find({}, '-__v');
 
         response.json({
-            items
+            boxes
         });
     } catch (error) {
         console.error(error);

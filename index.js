@@ -35,10 +35,11 @@ app.post('/modify-item', checkIfTheUserHasCredentials, checkIfTheUserIsAdmin, re
 
 app.post('/new-box', checkIfTheUserHasCredentials, checkIfTheUserIsAdmin, require('./controllers/box/new'));
 
-app.get('/boxes', checkIfTheUserHasCredentials, checkIfTheUserIsAdmin, require('./controllers/box/get'));
+app.get('/boxes', require('./controllers/box/get'));
 
 app.delete('/delete-item/:id', checkIfTheUserHasCredentials, checkIfTheUserIsAdmin, require('./controllers/items/delete'));
 
+app.post('/add-item-inner-box',  checkIfTheUserHasCredentials, checkIfTheUserIsAdmin, require('./controllers/box/addItem'))
 
 mongoose.connect(dataBaseConnectionString, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true },
     (error) => {

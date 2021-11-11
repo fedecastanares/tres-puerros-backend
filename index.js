@@ -41,6 +41,12 @@ app.delete('/delete-item/:id', checkIfTheUserHasCredentials, checkIfTheUserIsAdm
 
 app.post('/add-item-inner-box',  checkIfTheUserHasCredentials, checkIfTheUserIsAdmin, require('./controllers/box/addItem'))
 
+app.post('/remove-item-inner-box',  checkIfTheUserHasCredentials, checkIfTheUserIsAdmin, require('./controllers/box/removeitem'))
+
+app.delete('/delete-box/:id', checkIfTheUserHasCredentials, checkIfTheUserIsAdmin, require('./controllers/box/delete'));
+
+
+
 mongoose.connect(dataBaseConnectionString, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true },
     (error) => {
         if (error) {

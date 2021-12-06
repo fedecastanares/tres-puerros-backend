@@ -45,6 +45,8 @@ app.post('/remove-item-inner-box',  checkIfTheUserHasCredentials, checkIfTheUser
 
 app.delete('/delete-box/:id', checkIfTheUserHasCredentials, checkIfTheUserIsAdmin, require('./controllers/box/delete'));
 
+app.post('/add-order',  require('./controllers/orders/add'))
+
 
 
 mongoose.connect(dataBaseConnectionString, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true },

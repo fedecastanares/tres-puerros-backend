@@ -47,7 +47,7 @@ app.delete('/delete-box/:id', checkIfTheUserHasCredentials, checkIfTheUserIsAdmi
 
 app.post('/add-order',  require('./controllers/orders/add'))
 
-
+app.get('/orders', checkIfTheUserHasCredentials, checkIfTheUserIsAdmin, require('./controllers/orders/get'));
 
 mongoose.connect(dataBaseConnectionString, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true },
     (error) => {

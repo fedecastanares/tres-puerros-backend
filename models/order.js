@@ -19,15 +19,11 @@ module.exports = model('Orders', new Schema({
                 active: Boolean,
                 kg: String,
                 name: String,
-                qty: String
+                units: String
             }],
             name: String,
-            price: Number
-        },
+            price: Number,
         // Si es item
-        {
-            name: String,
-            price: String,
             units: String,
             kg: String
         }

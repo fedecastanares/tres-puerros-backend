@@ -11,7 +11,7 @@ module.exports = model('Items', new Schema({
         required: true,
         trim: true
     },
-    weight: {
+    package: {
         type: String,
         required: true,
         trim: true

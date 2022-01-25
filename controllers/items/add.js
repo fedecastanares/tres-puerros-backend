@@ -10,7 +10,7 @@ module.exports = (request, response) => {
         name: Joi.string()
             .required(),
         
-        weight: Joi.string()
+        package: Joi.string()
             .required(),
 
         cat: Joi.string()
@@ -23,7 +23,7 @@ module.exports = (request, response) => {
         itemModel.create({
             name: request.body.name,
             price: request.body.price,
-            weight:  request.body.weight,
+            package:  request.body.package,
             cat: request.body.cat
 
         }, (error, item) => {

@@ -49,6 +49,8 @@ app.post('/add-order',  require('./controllers/orders/add'))
 
 app.get('/orders', checkIfTheUserHasCredentials, checkIfTheUserIsAdmin, require('./controllers/orders/get'));
 
+app.get('/order/:id', checkIfTheUserHasCredentials, checkIfTheUserIsAdmin, require('./controllers/orders/getOrderByID'));
+
 mongoose.connect(dataBaseConnectionString, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true },
     (error) => {
         if (error) {

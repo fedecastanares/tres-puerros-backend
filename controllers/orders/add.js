@@ -13,7 +13,7 @@ module.exports = async (request, response) => {
             phone: String,
             zone: String,
         }),
-        cart: Joi.array()
+        cart: Joi.array(),
         /*.items(
             Joi.object({
                 // Box
@@ -38,7 +38,8 @@ module.exports = async (request, response) => {
 
         orderModel.create({
             personalData: request.body.personalData,
-            cart: request.body.cart
+            cart: request.body.cart,
+            delivered: false
         }, (error, order) => {
             if (error) {
                 response.status(500).json({

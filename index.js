@@ -51,7 +51,9 @@ app.get('/orders', checkIfTheUserHasCredentials, checkIfTheUserIsAdmin, require(
 
 app.get('/order/:id', checkIfTheUserHasCredentials, checkIfTheUserIsAdmin, require('./controllers/orders/getOrderByID'));
 
-app.post('/clean-orders',  require('./controllers/orders/clean'))
+app.post('/clean-orders', checkIfTheUserHasCredentials, checkIfTheUserIsAdmin, require('./controllers/orders/clean'))
+
+app.post('/delete-order/:id', checkIfTheUserHasCredentials, checkIfTheUserIsAdmin, require('./controllers/orders/clearOrderByID'))
 
 
 mongoose.connect(dataBaseConnectionString, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true },

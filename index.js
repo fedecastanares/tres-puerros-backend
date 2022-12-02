@@ -63,7 +63,7 @@ mongoose.connect(dataBaseConnectionString, { useNewUrlParser: true, useUnifiedTo
         } else {
             // Comenzar a escuchar por conexiones
             app.listen(port, '0.0.0.0', () =>
-                console.log(`;) Servidor corriendo en el puerto: ${process.env.PORT}`)
+                console.log(`;) Servidor corriendo en el puerto:  ${process.env.PORT}`)
             )
         }
     });
